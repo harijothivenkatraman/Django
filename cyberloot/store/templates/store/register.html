@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+<h2>Register</h2>
+
+<form method="post" enctype="multipart/form-data" id="register-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <!-- Profile Picture Upload Section -->
+    <div>
+        <label for="profile_pic">Upload Profile Picture:</label>
+        <input type="file" name="profile_pic" id="profile_pic" accept="image/*" onchange="disableWebcamCapture()">
+    </div>
+
+    <!-- Webcam Capture Section -->
+    <div>
+        <h3>Or Capture Profile Picture</h3>
+        <video id="webcam" width="320" height="240" autoplay></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <button type="button" id="capture-btn" onclick="captureImage()">Capture</button>
+    </div>
+
+    <!-- Hidden Input to Store Captured Image -->
+    <input type="hidden" name="captured_image" id="captured_image">
+
+    <button type="submit">Register</button>
+</form>
+
+<p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+
+<!-- JavaScript for Webcam & Upload Handling -->
+<script>
+    const webcam = document.getElementById("webcam");
+    const canvas = document.getElementById("canvas");
+    const profilePicInput = document.getElementById("profile_pic");
+    const capturedImageInput = document.getElementById("captured_image");
+    const captureBtn = document.getElementById("capture-btn");
+
+    // Enable webcam stream
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            webcam.srcObject = stream;
+        })
+        .catch(error => {
+            console.error("Webcam access denied: ", error);
+        });
+
+    function captureImage() {
+        // Disable file upload when capturing an image
+        profilePicInput.value = "";
+        profilePicInput.disabled = true;
+
+        // Capture image from webcam
+        canvas.width = webcam.videoWidth;
+        canvas.height = webcam.videoHeight;
+        canvas.getContext("2d").drawImage(webcam, 0, 0, canvas.width, canvas.height);
+
+        // Convert the image to a Base64 string
+        const imageData = canvas.toDataURL("image/png");
+        capturedImageInput.value = imageData;
+        
+        alert("Profile picture captured successfully!");
+    }
+
+    function disableWebcamCapture() {
+        // Disable webcam capture when a file is uploaded
+        capturedImageInput.value = "";
+        profilePicInput.disabled = false;
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,266 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #1c1c3c, #2c3e50);
+    color: #f8f9fa;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Main Content */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* Form Styling */
+form {
+    background: linear-gradient(to right, #283048, #859398);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+button {
+    background-color: hsla(0, 11%, 74%, 0.651);
+    color: #ccc;
+}
+/* Form Title */
+h2 {
+    text-align: center;
+    color: #ffd700;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+form p {
+    margin-bottom: 15px;
+}
+
+.logout button {
+    padding: 10px 18px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logout button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    outline: none;
+}
+
+
+.logout {
+    background-color: none;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.logout:hover{
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+.Browse {
+        color: #ffffff;
+        font-weight: bold;
+}
+.Browse:hover{
+    color: #859398;
+}
+/* Product List Styling */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Product Card */
+.product {
+    background: linear-gradient(to right, #434343, #000000);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Product Image */
+.product img {
+    max-width: 100%;
+    height: 220px;
+    object-fit: fit;
+    border-radius: 10px;
+}
+
+/* Product Title */
+.product h3 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+/* Product Price */
+.product p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #a8a29c;
+    margin-bottom: 10px;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 260px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -260px;
+    background: linear-gradient(to bottom, #232526, #414345);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    box-sizing: border-box;
+}
+
+#sidebar h3 {
+    margin-top: 0;
+    color: #ffd700;
+}
+
+/* Sidebar Links */
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin: 15px 0;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#sidebar ul li a:hover {
+    color: #ffd700;
+}
+
+/* Sidebar Toggle Button */
+#toggle-sidebar {
+    background: linear-gradient(to right, #ff8000, #ffd700);
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+#toggle-sidebar:hover {
+    background: linear-gradient(to right, #ffd700, #ff8000);
+    transform: scale(1.05);
+}
+
+/* When Sidebar is Open */
+.sidebar-open #sidebar {
+    left: 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}

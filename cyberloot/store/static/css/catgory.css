@@ -1,0 +1,56 @@
+/* Make sure nav items align properly */
+nav {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment */
+    gap: 20px;
+}
+
+/* Ensure dropdown behaves like a button */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style the dropdown button to match other nav links */
+.dropbtn {
+    padding: 10px 18px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Style dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #2a3f5f;
+    padding: 10px 0;
+    min-width: 160px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix spacing of dropdown items */
+.dropdown-content a {
+    color: white;
+    padding: 8px 16px;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Show dropdown when hovering over button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
